@@ -7,9 +7,9 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      this.model.play();
-      this.model.set({'selected': true});
-      console.log(this.model.get('selected'));
+      //this.model.play();
+      this.model.enqueue();
+      //console.log(this.model.get('selected'));
       //Tell song model that selected
         // this.model.set({})
     }
