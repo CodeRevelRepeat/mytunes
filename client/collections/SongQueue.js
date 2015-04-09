@@ -2,9 +2,13 @@
 var SongQueue = Songs.extend({
 
   initialize: function(){
-    console.log(this.collection);
+  },
+
+  playFirst : function(){
+    //console.log(this, this[0]);
+    this.at(0).play();
   }
-  this.collection.get();
+
   //method that adds song to SongQueue
   //method that removes song from SongQueue once played
 

@@ -7,12 +7,10 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      //this.model.play();
+      // this.model.play();
       this.model.enqueue();
-      //console.log(this.model.get('selected'));
-      //Tell song model that selected
-        // this.model.set({})
-    }
+
+    },
   },
 
   render: function(){
