@@ -24,18 +24,18 @@ describe('SongModel', function() {
     });
   });
 
-  describe('dequeue', function() {
-    it('triggers a "dequeue" event', function() {
-      model.dequeue();
-      expect(model.trigger).to.have.been.calledWith('dequeue', model);
+  describe('disenqueue', function() {
+    it('triggers a "disenqueue" event', function() {
+      model.disenqueue();
+      expect(model.trigger).to.have.been.calledWith('disenqueue', model);
     });
   });
 
   describe('ended', function() {
     it('triggers an "ended" event', function() {
       model.play();
-      model.ended();
-      expect(model.trigger).to.have.been.calledWith('ended', model);
+      model.disenqueue();
+      expect(model.trigger).to.have.been.calledWith('disenqueue', model);
     });
   });
 });
