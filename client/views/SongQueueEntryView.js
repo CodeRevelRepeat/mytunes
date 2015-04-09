@@ -16,5 +16,15 @@ var SongQueueEntryView = Backbone.View.extend({
 
 
     return this.$el.html(this.template(this.model.attributes));
-  }
+  },
+
+
+    events: {
+    'click': function() {
+      console.log("removing clicked song", this.$el)
+      this.$el.remove();
+      this.model.disenqueue();
+    }
+  },
+
 });

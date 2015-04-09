@@ -11,11 +11,16 @@ var PlayerView = Backbone.View.extend({
   setSong: function(song){
     this.model = song;
     this.render();
-
+    this.listenTo(this.model,'disenqueue', this.pause);
   },
 
   render: function(){
     return this.$el.attr('src', this.model ? this.model.get('url') : '');
+  },
+
+  pause: function(){
+    console.log("trying to pause", this.model);
+    this.el.pause();
   },
 
   events: {
